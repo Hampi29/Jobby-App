@@ -71,3 +71,28 @@
   border: 0px;
   background-color: black;
 }
+
+@media screen and (max-width: 767px) {
+  .job-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+  .side-bar-container {
+    width: 100%;
+  }
+  .search-input {
+    width: 80%;
+  }
+  .jobscontainer {
+    width: 100%;
+  }
+  .emptyp-list {
+    width: 100%;
+    padding: 0;
+  }
+  .no-jobs {
+    width: 90%;
+    height: 90%;
+  }
+}

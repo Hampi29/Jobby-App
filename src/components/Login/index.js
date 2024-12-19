@@ -5,10 +5,12 @@ import {Redirect} from 'react-router-dom'
 import './index.css'
 
 class Login extends Component {
-  state = {username: '', password: '', showSubmitError: false, error_msg: ''}
+  state = {username: '', password: '', showSubmitError: false, errorMsg: ''}
+
   onChangingUsername = event => {
     this.setState({username: event.target.value})
   }
+
   onChangingPassword = event => {
     this.setState({password: event.target.value})
   }
@@ -19,8 +21,8 @@ class Login extends Component {
     history.replace('/')
   }
 
-  onSubmitFailure = error_msg => {
-    this.setState({showSubmitError: true, error_msg: error_msg})
+  onSubmitFailure = errorMsg => {
+    this.setState({showSubmitError: true, errorMsg})
   }
 
   submitCreds = async event => {
@@ -42,10 +44,10 @@ class Login extends Component {
   }
 
   render() {
-    const {username, password, showSubmitError, error_msg} = this.state
+    const {username, password, showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken !== undefined) {
-      <Redirect to="/" />
+      ;<Redirect to="/" />
     }
     return (
       <div className="login-bg">
@@ -82,7 +84,7 @@ class Login extends Component {
           <button type="submit" className="login-btn">
             Login
           </button>
-          {showSubmitError && <p className="error-msg">*{error_msg}</p>}
+          {showSubmitError && <p className="error-msg">*{errorMsg}</p>}
         </form>
       </div>
     )

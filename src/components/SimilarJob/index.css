@@ -11,6 +11,13 @@
   width: 40px;
   margin-right: 10px;
 }
+.title-job-heading {
+  color: #ffffff;
+  margin-top: 0;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  font-size: 100%;
+}
 
 .similar-job-header-container {
   display: flex;
@@ -40,4 +47,13 @@
 .icons {
   margin-right: 5px;
   color: #cbd5e1;
+}
+@media screen and (max-width: 767px) {
+  .similar-job-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .title-job-heading {
+    font-size: 20px;
+  }
 }

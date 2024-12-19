@@ -165,61 +165,54 @@ class AllJobs extends Component {
   }
 
   onRetryProfile = () => this.getProfileDetails()
+
   onRetryJobs = () => this.getJobs()
 
-  failureProfileCard = () => {
-    return (
-      <div className="failure">
-        <h1>profile Fail</h1>
-        <button className="retry-btn" onClick={this.onRetryProfile}>
-          Retry
-        </button>
-      </div>
-    )
-  }
+  failureProfileCard = () => (
+    <div className="failure">
+      <h1>profile Fail</h1>
+      <button type="button" className="retry-btn" onClick={this.onRetryProfile}>
+        Retry
+      </button>
+    </div>
+  )
 
-  onLoading = () => {
-    return (
-      <div className="loader-container" data-testid="loader">
-        <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-      </div>
-    )
-  }
+  onLoading = () => (
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
 
-  checkbokView = () => {
-    return (
-      <ul className="emptyp-list">
-        {employmentTypesList.map(each => (
-          <li key={each.employmentTypeId}>
-            <input
-              type="checkbox"
-              id={each.employmentTypeId}
-              onClick={this.onClickCheckbox}
-            />
-            <label for={each.employmentTypeId}>{each.label}</label>
-          </li>
-        ))}
-      </ul>
-    )
-  }
+  checkbokView = () => (
+    <ul className="emptyp-list">
+      {employmentTypesList.map(each => (
+        <li key={each.employmentTypeId}>
+          <input
+            type="checkbox"
+            id={each.employmentTypeId}
+            onClick={this.onClickCheckbox}
+          />
+          <label htmlFor={each.employmentTypeId}>{each.label}</label>
+        </li>
+      ))}
+    </ul>
+  )
 
-  radioboxView = () => {
-    return (
-      <ul className="emptyp-list">
-        {salaryRangesList.map(each => (
-          <li key={each.salaryRangeId}>
-            <input
-              id={each.salaryRangeId}
-              type="radio"
-              name="option"
-              onClick={this.onClickRadiobox}
-            />
-            <label for={each.salaryRangeId}>{each.label}</label>
-          </li>
-        ))}
-      </ul>
-    )
-  }
+  radioboxView = () => (
+    <ul className="emptyp-list">
+      {salaryRangesList.map(each => (
+        <li key={each.salaryRangeId}>
+          <input
+            id={each.salaryRangeId}
+            type="radio"
+            name="option"
+            onClick={this.onClickRadiobox}
+          />
+          <label htmlFor={each.salaryRangeId}>{each.label}</label>
+        </li>
+      ))}
+    </ul>
+  )
 
   successJobView = () => {
     const {jobsData} = this.state
@@ -231,37 +224,34 @@ class AllJobs extends Component {
           ))}
         </ul>
       )
-    } else {
-      return (
-        <div className="failure">
-          <img
-            src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-            alt="no jobs"
-            className="no-jobs"
-          />
-          <h1>No jobs found</h1>
-          <p>We could not find any jobs. Try other filters.</p>
-        </div>
-      )
     }
-  }
-
-  failureJobView = () => {
     return (
       <div className="failure">
         <img
-          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-          alt="failure view"
+          src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+          alt="no jobs"
           className="no-jobs"
         />
-        <h1>Oops! Something Went Wrong</h1>
-        <p>We cannot seem to find the page you are looking for.</p>
-        <button className="retry-btn" onClick={this.onRetryJobs}>
-          Retry
-        </button>
+        <h1>No jobs found</h1>
+        <p>We could not find any jobs. Try other filters.</p>
       </div>
     )
   }
+
+  failureJobView = () => (
+    <div className="failure">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="no-jobs"
+      />
+      <h1>Oops! Something Went Wrong</h1>
+      <p>We cannot seem to find the page you are looking for.</p>
+      <button type="button" className="retry-btn" onClick={this.onRetryJobs}>
+        Retry
+      </button>
+    </div>
+  )
 
   onChangingSearch = event => {
     this.setState({searchInput: event.target.value})
@@ -272,6 +262,7 @@ class AllJobs extends Component {
       this.getJobs()
     }
   }
+
   onSubmitSearch = () => {
     this.getJobs()
   }
@@ -330,7 +321,6 @@ class AllJobs extends Component {
   }
 
   render() {
-    const {jobsData, profileData, searchInput, activeSalaryRange} = this.state
     return (
       <div>
         <Header />

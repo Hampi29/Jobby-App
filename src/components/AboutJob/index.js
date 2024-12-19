@@ -146,7 +146,7 @@ class AboutJob extends Component {
             ))}
           </ul>
           <div className="life-at-company">
-            <div>
+            <div className="life-heading-para-container">
               <h1>Life at Company</h1>
               <p>{lifeAtCompany.description}</p>
             </div>
@@ -167,34 +167,30 @@ class AboutJob extends Component {
     )
   }
 
-  renderLoading = () => {
-    return (
-      <div className="loader-container" data-testid="loader">
-        <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
-      </div>
-    )
-  }
+  renderLoading = () => (
+    <div className="loader-container" data-testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+    </div>
+  )
 
   onClickRetry = () => {
     this.getJobData()
   }
 
-  renderFailureView = () => {
-    return (
-      <div className="failure">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-          alt="failure view"
-          className="failure-image"
-        />
-        <h1>Oops! Something Went Wrong</h1>
-        <p>We cannot seem to find the page you are looking for.</p>
-        <button className="retry-btn" onClick={this.onClickRetry}>
-          Retry
-        </button>
-      </div>
-    )
-  }
+  renderFailureView = () => (
+    <div className="failure">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="failure-image"
+      />
+      <h1>Oops! Something Went Wrong</h1>
+      <p>We cannot seem to find the page you are looking for.</p>
+      <button type="button" className="retry-btn" onClick={this.onClickRetry}>
+        Retry
+      </button>
+    </div>
+  )
 
   renderJobView = () => {
     const {apiStatus} = this.state

@@ -7,7 +7,6 @@ const SimilarJob = props => {
   const {
     companyLogoUrl,
     employmentType,
-    id,
     jobDescription,
     location,
     rating,
@@ -22,7 +21,7 @@ const SimilarJob = props => {
           className="company-logo"
         />
         <div>
-          <h1>{title}</h1>
+          <h1 className="title-job-heading">{title}</h1>
           <div className="rating-container">
             <BsStarFill className="star-icon" />
             <p>{rating}</p>

@@ -108,3 +108,29 @@
   width: 250px;
   margin-left: 15px;
 }
+
+@media screen and (max-width: 767px) {
+  .jobdetails-container {
+    padding: 15px;
+  }
+  .ul-skills-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .life-at-company {
+    display: flex;
+    flex-direction: column;
+  }
+  .life-heading-para-container {
+    width: 100%;
+  }
+
+  .skill-details {
+    width: 100%;
+  }
+  .skill-image {
+    width: 80px;
+    height: 80px;
+  }
+}
